@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_blue">
+
+    <ImageView
+        android:id="@+id/app_pic2"
+        android:layout_width="310dp"
+        android:layout_height="465dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:src="@drawable/appphoto" />
+
+    <EditText
+        android:id="@+id/edt_text3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User-Friendly"
+        android:textSize="32dp"
+        android:textColor="@color/white"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/app_pic2"
+        android:paddingLeft="25dp"/>
+
+    <EditText
+        android:id="@+id/edt_text4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Designed with you in mind for a smooth and enjoyable shopping experience."
+        android:textSize="20dp"
+        android:textColor="@color/light_grey"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/edt_text3"
+        android:paddingLeft="20dp"/>
+
+
+    <Button
+        android:id="@+id/btnNext2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/edt_text4"
+        android:text="Next"
+        android:textAllCaps="false"
+        android:background="@drawable/btn_background"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+
+
+
+</RelativeLayout>

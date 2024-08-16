@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_blue">
+
+    <ImageView
+        android:id="@+id/app_pic2"
+        android:layout_width="match_parent"
+        android:layout_height="454dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/apppic10" />
+
+    <EditText
+        android:id="@+id/edt_text3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Comprehensive Coverage"
+        android:textSize="32dp"
+        android:textColor="@color/white"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/app_pic2"
+        android:paddingLeft="25dp"/>
+
+    <EditText
+        android:id="@+id/edt_text4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Compare prices from all major UK supermarkets including Tesco,Asda,Sainsbury's, and more."
+        android:textSize="20dp"
+        android:textColor="@color/light_grey"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/edt_text3"
+        android:paddingLeft="20dp"/>
+
+
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/edt_text4"
+        android:text="Next"
+        android:textAllCaps="false"
+        android:background="@drawable/btn_background"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+
+
+
+
+
+
+
+</RelativeLayout>
