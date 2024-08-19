@@ -8,17 +8,19 @@
     android:background="@color/dark_blue"
     tools:context=".Home">
     <!-- Top menu icons -->
-    <LinearLayout
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:orientation="horizontal"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:padding="20dp"
-        android:gravity="center_vertical">
-
-    </LinearLayout>
+        android:padding="10dp"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
 
 
     <!-- Menu icon -->
@@ -26,7 +28,7 @@
         android:id="@+id/icon"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="20dp"
         android:src="@drawable/ic"
         android:background="@color/dark_purple"
         android:layout_marginLeft="15dp"/>
@@ -36,9 +38,8 @@
             android:layout_width="254dp"
             android:layout_height="32dp"
             android:layout_marginLeft="120dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="120dp"
-            android:layout_weight="1"
             android:gravity="center"
             android:text="Home"
             android:textColor="@color/silverWhite"
@@ -50,7 +51,7 @@
         android:layout_height="32dp"
         android:src="@drawable/profile"
         android:background="@color/dark_purple"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="20dp"
         android:layout_marginLeft="350dp"/>
 
 
@@ -60,48 +61,55 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Top Picks of the Day!"
-        android:textSize="24dp"
+        android:textSize="20dp"
         android:textColor="@color/white"
         android:layout_below="@id/title"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp" />
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
 
 
     <!-- Search bar -->
     <LinearLayout
         android:id="@+id/search"
-        android:layout_width="match_parent"
+        android:layout_width="307dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/top_picks"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
         android:layout_marginRight="80dp"
         android:background="@drawable/search"
-        android:padding="15dp"
-        android:orientation="horizontal">
-    <EditText
-        android:id="@+id/search_bar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:hint="Search"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:background="@null" />
+        android:orientation="horizontal"
+        android:padding="15dp">
 
+        <EditText
+            android:id="@+id/search_bar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="Search"
+            android:inputType="text"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
 
     </LinearLayout>
 
     <ImageView
-        android:layout_width="55dp"
-        android:layout_height="59dp"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
         android:layout_below="@id/top_picks"
         android:layout_gravity="center"
         android:layout_marginLeft="340dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="13dp"
+        android:drawableStart="@drawable/searchphoto"
         android:src="@drawable/searchphoto" />
 
     <!-- Recent picks -->
+
+
     <EditText
         android:id="@+id/recent"
         android:layout_width="wrap_content"
@@ -111,7 +119,6 @@
         android:layout_marginLeft="20dp"
         android:text="Your Recent Picks"
         android:textColor="@color/white" />
-
 
     <LinearLayout
         android:id="@+id/recent_picks"
@@ -154,13 +161,39 @@
 
     </LinearLayout>
 
+<!---chat with Ai-->
+
+    <LinearLayout
+        android:id="@+id/chat_Ai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/recent_picks"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/search"
+        android:padding="15dp"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/chat_bar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="text"
+            android:hint="Chat with AI to learn recipe's"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:background="@null" />
+
+    </LinearLayout>
+
     <LinearLayout
         android:id="@+id/filter"
         android:layout_width="396dp"
         android:layout_height="30dp"
-        android:layout_below="@id/recent_picks"
+        android:layout_below="@id/chat_Ai"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
@@ -202,10 +235,78 @@
             android:layout_weight="1"
             android:text="Sorting"
             android:textAllCaps="false"
-            android:textColor="@color/white"
-        />
+            android:textColor="@color/white"/>
 
     </LinearLayout>
 
+    <!--product view-->
 
+    <View
+        android:id="@+id/rectangle1"
+        android:layout_width="300dp"
+        android:layout_height="140dp"
+        android:layout_below="@id/filter"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rectangle1" />
+    <!-- Product Title -->
+    <TextView
+        android:id="@+id/product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Harringtons Tins Adult Grain Free Variety Multipack 6 x 400g"
+        android:textColor="@color/white"
+        android:layout_below="@id/rectangle1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textSize="16dp"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Rating Bar -->
+    <RatingBar
+        android:id="@+id/rating_bar"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@id/product"
+        android:layout_marginTop="4dp"
+        android:rating="4"
+        android:numStars="5"
+        android:stepSize="1"
+        android:layout_alignParentStart="true"
+        android:isIndicator="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+    />
+
+    <!-- Share and Report Buttons -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rating_bar"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/share_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/dark_purple"
+            android:text="Share"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/report_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/dark_purple"
+            android:text="Report"
+            android:textColor="@color/white"
+            android:layout_marginStart="8dp" />
+
+    </LinearLayout>
 </RelativeLayout>

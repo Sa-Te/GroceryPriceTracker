@@ -20,7 +20,7 @@ class whychoose3 : AppCompatActivity() {
 
         btnNext3.setOnClickListener {
 
-            val intent= Intent(this,whychoose3::class.java)
+            val intent= Intent(this,Home::class.java)
             startActivity(intent)
         }
 
