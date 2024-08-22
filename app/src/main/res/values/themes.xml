@@ -1,9 +1,13 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+<resources>
+
     <style name="Base.Theme.ViewProduct" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+    <style name="Base.Theme.SmartCart" parent="Theme.AppCompat.Light.NoActionBar">
+
     </style>
 
     <style name="Theme.ViewProduct" parent="Base.Theme.ViewProduct" />
+
+    <style name="Theme.SmartCart" parent="Base.Theme.SmartCart" />
+
 </resources>

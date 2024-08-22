@@ -3,4 +3,15 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="buttonBackground">#252742</color>
+    <color name="green">#00802b</color>
+    <color name="dark_blue">#0C0C26</color>
+    <color name="blue"> #3366ff</color>
+    <color name="red"> #D81049</color>
+    <color name="light_purple"> #BC9FFF</color>
+    <color name="light_grey"> #555879</color>
+    <color name="dark_purple">#252742</color>
+    <color name="colorPrimary">#ff5f5f</color>
+    <color name="silverWhite">#E2E5F3</color>
+    <color name="grey">#A5A5A5</color>
+    <color name="light_white">#CCCCCC</color>
 </resources>

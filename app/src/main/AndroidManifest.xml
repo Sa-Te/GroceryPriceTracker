@@ -12,15 +12,42 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ViewProduct"
         tools:targetApi="31">
+
+        <activity
+            android:name=".home1"
+            android:exported="false" />
+        <activity
+            android:name=".Home"
+            android:exported="false" />
+        <activity
+            android:name=".whychoose3"
+            android:exported="false" />
+        <activity
+            android:name=".whychoose2"
+            android:exported="false" />
+        <activity
+            android:name=".whychoose1"
+            android:exported="false" />
+        <activity
+            android:name=".welcome2"
+            android:exported="false" />
+        <activity
+            android:name=".welcome"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".SignUp"
+            android:exported="false" />
+        <activity
+            android:name=".LogIn"
+            android:exported="false" />
     </application>
 
 </manifest>
