@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Asuna\\Desktop\\System-Design\\GroceryPriceTracker\\GroceryPriceTrackerBackend\\GroceryPriceTrackerAPI\\GroceryPriceTrackerAPI.csproj": {}
+    "C:\\Users\\Asuna\\Desktop\\System Design\\GroceryPriceTracker\\GroceryPriceTrackerBackend\\GroceryPriceTrackerAPI\\GroceryPriceTrackerAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Asuna\\Desktop\\System-Design\\GroceryPriceTracker\\GroceryPriceTrackerBackend\\GroceryPriceTrackerAPI\\GroceryPriceTrackerAPI.csproj": {
+    "C:\\Users\\Asuna\\Desktop\\System Design\\GroceryPriceTracker\\GroceryPriceTrackerBackend\\GroceryPriceTrackerAPI\\GroceryPriceTrackerAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Asuna\\Desktop\\System-Design\\GroceryPriceTracker\\GroceryPriceTrackerBackend\\GroceryPriceTrackerAPI\\GroceryPriceTrackerAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Asuna\\Desktop\\System Design\\GroceryPriceTracker\\GroceryPriceTrackerBackend\\GroceryPriceTrackerAPI\\GroceryPriceTrackerAPI.csproj",
         "projectName": "GroceryPriceTrackerAPI",
-        "projectPath": "C:\\Users\\Asuna\\Desktop\\System-Design\\GroceryPriceTracker\\GroceryPriceTrackerBackend\\GroceryPriceTrackerAPI\\GroceryPriceTrackerAPI.csproj",
+        "projectPath": "C:\\Users\\Asuna\\Desktop\\System Design\\GroceryPriceTracker\\GroceryPriceTrackerBackend\\GroceryPriceTrackerAPI\\GroceryPriceTrackerAPI.csproj",
         "packagesPath": "C:\\Users\\Asuna\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Asuna\\Desktop\\System-Design\\GroceryPriceTracker\\GroceryPriceTrackerBackend\\GroceryPriceTrackerAPI\\obj\\",
+        "outputPath": "C:\\Users\\Asuna\\Desktop\\System Design\\GroceryPriceTracker\\GroceryPriceTrackerBackend\\GroceryPriceTrackerAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -50,9 +50,17 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "HtmlAgilityPack": {
+              "target": "Package",
+              "version": "[1.11.64, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.2, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.28.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

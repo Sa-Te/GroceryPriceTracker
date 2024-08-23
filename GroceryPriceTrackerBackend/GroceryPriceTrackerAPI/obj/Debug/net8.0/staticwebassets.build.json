@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "V7onrxnImSu3lkeY7TjEV2nbSj/ndFTqFbiYxoEP0Uc=",
+  "Source": "GroceryPriceTrackerAPI",
+  "BasePath": "_content/GroceryPriceTrackerAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
