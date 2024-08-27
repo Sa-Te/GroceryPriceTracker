@@ -1,20 +1,20 @@
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Hosting;
+using GroceryPriceTrackerAPI.Data;
 
-namespace GroceryPriceTrackerAPI
-{
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            CreateHostBuilder(args).Build().Run();
-        }
+var builder = WebApplication.CreateBuilder(args);
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
-    }
-}
+// Register MongoDBService as a singleton
+builder.Services.AddSingleton<MongoDBService>();
+
+// Register HttpClient as a service
+builder.Services.AddHttpClient();
+
+// Register controllers
+builder.Services.AddControllers();
+
+var app = builder.Build();
+
+app.UseRouting();
+
+app.MapControllers();
+
+app.Run();

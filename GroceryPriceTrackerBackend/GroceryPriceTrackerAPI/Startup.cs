@@ -11,9 +11,18 @@ namespace GroceryPriceTrackerAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            // Register MongoDBService
             services.AddSingleton<MongoDBService>();
+
+            // Register GroceryScraper
             services.AddSingleton<GroceryScraper>();
-            services.AddHostedService<DataFetchingService>(); //
+
+            // Register HttpClient
+            services.AddHttpClient();
+
+            // Register the DataFetchingService as a hosted service
+            services.AddHostedService<DataFetchingService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

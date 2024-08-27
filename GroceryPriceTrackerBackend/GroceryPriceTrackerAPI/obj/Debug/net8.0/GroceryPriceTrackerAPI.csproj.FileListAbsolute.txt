@@ -46,3 +46,12 @@ C:\Users\Asuna\Desktop\System Design\GroceryPriceTracker\GroceryPriceTrackerBack
 C:\Users\Asuna\Desktop\System Design\GroceryPriceTracker\GroceryPriceTrackerBackend\GroceryPriceTrackerAPI\obj\Debug\net8.0\GroceryPriceTrackerAPI.pdb
 C:\Users\Asuna\Desktop\System Design\GroceryPriceTracker\GroceryPriceTrackerBackend\GroceryPriceTrackerAPI\obj\Debug\net8.0\GroceryPriceTrackerAPI.genruntimeconfig.cache
 C:\Users\Asuna\Desktop\System Design\GroceryPriceTracker\GroceryPriceTrackerBackend\GroceryPriceTrackerAPI\obj\Debug\net8.0\ref\GroceryPriceTrackerAPI.dll
+C:\Users\Asuna\Desktop\System Design\GroceryPriceTracker\GroceryPriceTrackerBackend\GroceryPriceTrackerAPI\bin\Debug\net8.0\scraper\env\Lib\site-packages\playwright\driver\package\api.json
+C:\Users\Asuna\Desktop\System Design\GroceryPriceTracker\GroceryPriceTrackerBackend\GroceryPriceTrackerAPI\bin\Debug\net8.0\scraper\env\Lib\site-packages\playwright\driver\package\browsers.json
+C:\Users\Asuna\Desktop\System Design\GroceryPriceTracker\GroceryPriceTrackerBackend\GroceryPriceTrackerAPI\bin\Debug\net8.0\scraper\env\Lib\site-packages\playwright\driver\package\lib\server\deviceDescriptorsSource.json
+C:\Users\Asuna\Desktop\System Design\GroceryPriceTracker\GroceryPriceTrackerBackend\GroceryPriceTrackerAPI\bin\Debug\net8.0\scraper\env\Lib\site-packages\playwright\driver\package\package.json
+C:\Users\Asuna\Desktop\System Design\GroceryPriceTracker\GroceryPriceTrackerBackend\GroceryPriceTrackerAPI\bin\Debug\net8.0\scraper\env\Lib\site-packages\text_unidecode-1.3.dist-info\metadata.json
+C:\Users\Asuna\Desktop\System Design\GroceryPriceTracker\GroceryPriceTrackerBackend\GroceryPriceTrackerAPI\bin\Debug\net8.0\scraper\scraped_products.json
+C:\Users\Asuna\Desktop\System Design\GroceryPriceTracker\GroceryPriceTrackerBackend\GroceryPriceTrackerAPI\bin\Debug\net8.0\scraper\vodka_results.json
+C:\Users\Asuna\Desktop\System Design\GroceryPriceTracker\GroceryPriceTrackerBackend\GroceryPriceTrackerAPI\bin\Debug\net8.0\GroceryPriceTrackerAPI.staticwebassets.runtime.json
+C:\Users\Asuna\Desktop\System Design\GroceryPriceTracker\GroceryPriceTrackerBackend\GroceryPriceTrackerAPI\bin\Debug\net8.0\Newtonsoft.Json.dll

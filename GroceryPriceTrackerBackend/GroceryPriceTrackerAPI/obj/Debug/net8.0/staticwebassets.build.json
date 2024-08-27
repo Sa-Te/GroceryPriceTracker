@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "V7onrxnImSu3lkeY7TjEV2nbSj/ndFTqFbiYxoEP0Uc=",
+  "Hash": "SXpzctVrSuRWBEJU1JFu6tCO7JCXAJKhsriKJNT8F+U=",
   "Source": "GroceryPriceTrackerAPI",
   "BasePath": "_content/GroceryPriceTrackerAPI",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "GroceryPriceTrackerAPI\\wwwroot",
+      "Source": "GroceryPriceTrackerAPI",
+      "ContentRoot": "C:\\Users\\Asuna\\Desktop\\System Design\\GroceryPriceTracker\\GroceryPriceTrackerBackend\\GroceryPriceTrackerAPI\\wwwroot\\",
+      "BasePath": "_content/GroceryPriceTrackerAPI",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }
