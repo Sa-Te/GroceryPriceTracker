@@ -1,58 +1,42 @@
-using System.Net.Http;
-using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
-using GroceryPriceTrackerAPI.Data;
+using MongoDB.Driver;
 using GroceryPriceTrackerAPI.Models;
 using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Threading.Tasks;
 
-[ApiController]
-[Route("api/[controller]")]
-public class ScraperController : ControllerBase
+namespace GroceryPriceTrackerAPI.Data
 {
-    private readonly HttpClient _httpClient;
-    private readonly MongoDBService _mongoDBService;
-
-    public ScraperController(HttpClient httpClient, MongoDBService mongoDBService)
+    public class MongoDBService
     {
-        _httpClient = httpClient;
-        _mongoDBService = mongoDBService;
-    }
+        private readonly IMongoCollection<Product> _products;
 
-    [HttpGet("search")]
-    public async Task<IActionResult> Search(string query)
-    {
-        var response = await _httpClient.GetAsync($"http://localhost:8000/scrape?query={query}");
-
-        if (response.IsSuccessStatusCode)
+        public MongoDBService()
         {
-            var result = await response.Content.ReadAsStringAsync();
-
-            // Deserialize JSON into a list of Product objects
-            var products = JsonConvert.DeserializeObject<List<Product>>(result);
-
-            // Store products in MongoDB
-            await _mongoDBService.StoreProductsAsync(products);
-
-            return Ok(products);
+            var client = new MongoClient("mongodb+srv://akkisaitj:iZeS8lce0mfwMu4J@cluster0.ylgit.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
+            var database = client.GetDatabase("GroceryDB");
+            _products = database.GetCollection<Product>("Products");
         }
-        else
+
+        public async Task StoreProductsAsync(List<Product> products)
         {
-            return StatusCode((int)response.StatusCode, response.ReasonPhrase);
+            if (products == null || !products.Any())
+            {
+                Console.WriteLine("No products to store.");  // Log when no products are found
+                return;
+            }
+
+            Console.WriteLine("Inserting products to MongoDB...");  // Log insertion
+            await _products.InsertManyAsync(products);
         }
-    }
 
-    [HttpGet("all")]
-    public async Task<IActionResult> GetAllProducts()
-    {
-        var products = await _mongoDBService.GetProductsAsync();
-        return Ok(products);
-    }
+        public async Task<List<Product>> GetProductsAsync()
+        {
+            return await _products.Find(_ => true).ToListAsync();
+        }
 
-    [HttpGet("store/{storeName}")]
-    public async Task<IActionResult> GetProductsByStore(string storeName)
-    {
-        var products = await _mongoDBService.GetProductsByStoreAsync(storeName);
-        return Ok(products);
+        public async Task<List<Product>> GetProductsByStoreAsync(string store)
+        {
+            var filter = Builders<Product>.Filter.Eq("Store", store);
+            return await _products.Find(filter).ToListAsync();
+        }
     }
 }

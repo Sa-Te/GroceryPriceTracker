@@ -3,17 +3,20 @@ from playwright.async_api import async_playwright
 
 async def search_tesco(query):
     async with async_playwright() as playwright:
-        browser = await playwright.chromium.launch(headless=True)
+        browser = await playwright.chromium.launch(
+            headless=False,
+            args=["--disable-http2"]  # Disable HTTP/2
+        )
         context = await browser.new_context()
         page = await context.new_page()
 
         try:
             # Navigate to Tesco search page
             search_url = f"https://www.tesco.com/groceries/en-GB/search?query={query}"
-            await page.goto(search_url)
+            await page.goto(search_url, timeout=60000)  # Increase timeout to 60 seconds
 
             # Wait for products to load
-            await page.wait_for_selector(".styles__StyledTileContentWrapper-dvv1wj-2")
+            await page.wait_for_selector(".styles__StyledTileContentWrapper-dvv1wj-2", timeout=60000)
 
             # Get all products listed on the page
             products = await page.query_selector_all(".styles__StyledTileContentWrapper-dvv1wj-2")
@@ -44,6 +47,7 @@ async def search_tesco(query):
         except Exception as e:
             print(f"An error occurred: {e}")
             return []
-        
+
         finally:
             await browser.close()
+

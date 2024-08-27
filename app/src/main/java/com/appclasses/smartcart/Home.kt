@@ -41,9 +41,14 @@ class Home : AppCompatActivity() {
     }
 
     private fun fetchProducts(query: String) {
-        val client = OkHttpClient()
+        val client = OkHttpClient.Builder()
+            .connectTimeout(30, java.util.concurrent.TimeUnit.SECONDS)
+            .readTimeout(30, java.util.concurrent.TimeUnit.SECONDS)
+            .writeTimeout(30, java.util.concurrent.TimeUnit.SECONDS)
+            .build()
+
         val request = Request.Builder()
-            .url("http://10.0.2.2:5000/api/scraper/search?query=$query") // Replace with your actual backend URL
+            .url("http://10.0.2.2:5235/api/scraper/search?query=$query")
             .build()
 
         client.newCall(request).enqueue(object : okhttp3.Callback {
@@ -52,17 +57,35 @@ class Home : AppCompatActivity() {
             }
 
             override fun onResponse(call: okhttp3.Call, response: Response) {
-                response.body?.string()?.let { json ->
-                    val productType = object : TypeToken<List<Product>>() {}.type
-                    val products: List<Product> = Gson().fromJson(json, productType)
+                val json = response.body?.string()
+                Log.d("Home", "Response JSON: $json")
 
-                    runOnUiThread {
-                        productsAdapter = ProductsAdapter(products)
-                        recyclerView.adapter = productsAdapter
-                        Log.d("Home", "Products fetched and adapter updated")
+                try {
+                    if (json.startsWith("[")) {
+                        // This is the expected array of products
+                        val productType = object : TypeToken<List<Product>>() {}.type
+                        val products: List<Product> = Gson().fromJson(json, productType)
+
+                        runOnUiThread {
+                            productsAdapter = ProductsAdapter(products)
+                            recyclerView.adapter = productsAdapter
+                        }
+                    } else if (json.startsWith("{")) {
+                        // This is an object, possibly an error message or empty result
+                        val jsonObject = JSONObject(json)
+                        if (jsonObject.has("message")) {
+                            val message = jsonObject.getString("message")
+                            Log.d("Home", "Server message: $message")
+                            // Handle the message accordingly
+                        }
                     }
+                } catch (e: Exception) {
+                    Log.e("Home", "Failed to parse response", e)
                 }
             }
+
+
         })
     }
+
 }

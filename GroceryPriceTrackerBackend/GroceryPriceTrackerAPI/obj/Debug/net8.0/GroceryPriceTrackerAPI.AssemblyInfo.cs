@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GroceryPriceTrackerAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+86aa2cddf385e9091aa079db5fcfac9bc318a07f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+10e4a4108dd231cfc21c93880cfd3cbf9fbb838e")]
 [assembly: System.Reflection.AssemblyProductAttribute("GroceryPriceTrackerAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GroceryPriceTrackerAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

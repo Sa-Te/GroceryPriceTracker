@@ -1,9 +1,9 @@
-using System.Net.Http;
+
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
+
 using GroceryPriceTrackerAPI.Data;
 using GroceryPriceTrackerAPI.Models;
-using System.Collections.Generic;
+
 using Newtonsoft.Json;
 
 [ApiController]
@@ -19,6 +19,7 @@ public class ScraperController : ControllerBase
         _mongoDBService = mongoDBService;
     }
 
+
     [HttpGet("search")]
     public async Task<IActionResult> Search(string query)
     {
@@ -27,18 +28,25 @@ public class ScraperController : ControllerBase
         if (response.IsSuccessStatusCode)
         {
             var result = await response.Content.ReadAsStringAsync();
+            Console.WriteLine("Scraper result: " + result); // Log the raw JSON
 
-            // Deserialize JSON into a list of Product objects
             var products = JsonConvert.DeserializeObject<List<Product>>(result);
 
-            // Store products in MongoDB
+            if (products == null)
+            {
+                products = new List<Product>(); // Return an empty list if null
+            }
+
+            // Log the products being stored in MongoDB
+            Console.WriteLine("Products to store: " + JsonConvert.SerializeObject(products));
+
             await _mongoDBService.StoreProductsAsync(products);
 
             return Ok(products);
         }
         else
         {
-            return StatusCode((int)response.StatusCode, response.ReasonPhrase);
+            return BadRequest(new { error = "Failed to fetch products", details = response.ReasonPhrase });
         }
     }
 
