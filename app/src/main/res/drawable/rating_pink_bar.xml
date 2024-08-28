@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Background star outline -->
+    <item android:id="@android:id/background">
+        <bitmap
+            android:gravity="center"
+            android:src="@drawable/baseline_star_rate_24" />
+    </item>
+
+    <!-- Partially filled star (secondary progress) -->
+    <item android:id="@android:id/secondaryProgress">
+        <clip>
+            <bitmap
+                android:gravity="center"
+                android:src="@drawable/baseline_star_rate_24"
+                android:tint="#E91E63" /> <!-- Adjust color if needed -->
+        </clip>
+    </item>
+
+    <!-- Fully filled star (progress) -->
+    <item android:id="@android:id/progress">
+        <clip>
+            <bitmap
+                android:gravity="center"
+                android:src="@drawable/baseline_star_rate_24"
+                android:tint="#E91E63" /> <!-- Adjust color if needed -->
+        </clip>
+    </item>
+
+</layer-list>
